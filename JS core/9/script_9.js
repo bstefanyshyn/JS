@@ -65,6 +65,7 @@ function mainTime() {
     if (swMilliseconds == 1000) {
         swMilliseconds = 0;
         swSecond++;
+        
         if (swSecond == 60) {
             swSecond = 0;
             swMinute++;
