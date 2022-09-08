@@ -1,0 +1,51 @@
+/* #square {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-color: blueviolet;
+}
+
+#secret {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border: 7px ridge orange;
+    background-color: purple;
+}
+
+#secretText {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 0;
+}
+
+#pictureBlock {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#smallPictureBlock1,
+#smallPictureBlock2,
+#smallPictureBlock3 {
+    width: 350px;
+    height: 300px;
+    border: 5px double black;
+    background: no-repeat;
+    background-size: cover;
+}
+
+#urlImage1,
+#urlImage2,
+#urlImage3 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+#list {
+    list-style-type: upper-greek;
+    font-size: 25px;
+} */

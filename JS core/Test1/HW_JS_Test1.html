@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style_Test1.css">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- Загальний DIV -->
+    <div id="container">
+        <!-- Вікно результату -->
+        <div id="result"></div>
+        <!-- Вікно вибору таблиця/список -->
+        <div id="choose">
+            <h1>Choose what you want to add: </h1>
+            <input type="radio" name="type" value="table" id="radioTable" />
+            <label for="radioTable">Table</label>
+            <input type="radio" name="type" value="list" id="radioList" />
+            <label for="radioList">List</label>
+            <div class="tableList">
+                <!-- Вікно створення таблиці -->
+                <div id="table">
+                    <div class="tableRow"> Count TR:
+                        <input class="countTR" type="text" value="">
+                    </div>
+                    <div class="tableDate"> Count TD:
+                        <input class="countTD" type="text" value="">
+                    </div>
+                    <div class="tabelStyle">
+                        <h2>Add style to your table:</h2>
+                        <div class="tableWidth"> Width of TD:
+                            <input class="widthTD" type="text" value="">
+                        </div>
+                        <div class="tableHeight"> Height of TD:
+                            <input class="heightTD" type="text" value="">
+                        </div>
+                    </div>
+                    <div class="borderStyle">
+                        <div class="widthBorderTitle"> Width of border:
+                            <input class="borderWidth" type="text" value="">
+                        </div>
+                        <div class="typeBorderTitle"> Type of border:
+                            <select class="borderTypes">
+                                <option class="borderType" value="solid">solid</option>
+                                <option class="borderType" value="dotted">dotted</option>
+                            </select>
+                        </div>
+                        <div class="colorBorderTitle"> Color of border:
+                            <select class="borderColors">
+                                <option class="borderColor" value="yellow">yellow</option>
+                                <option class="borderColor" value="red">red</option>
+                                <option class="borderColor" value="blue">blue</option>
+                                <option class="borderColor" value="green">green</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Вікно створення списку -->
+                <div id="list">
+                    <div class="listCountTitle"> Count Li:
+                        <input class="countLI" type="text" value="" />
+                    </div>
+                    <div class="typeMarksTitle"> Type of marks:
+                        <select class="marksList">
+                            <option class="mark" value="circle">circle</option>
+                            <option class="mark" value="square">square</option>
+                            <option class="mark" value="lower-latin">lower-latin</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Кнопки -->
+                <button id="createTableBtn">Create table</button>
+                <button class="createListBtn">Create list</button>
+            </div>
+        </div>
+    </div>
+    <div id="buttons">
+        <!-- Кнопки -->
+        <button id="edit">edit</button>
+        <button id="style">style</button>
+    </div>
+    <div id="option">
+        <!-- заготовка Textarea -->
+        <div id="textareaBlock">
+            <textarea id="textarea">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                </textarea>
+                <!-- Кнопки -->
+            <button id="add">add</button>
+            <button id="save">save</button>
+        </div>
+        <!-- Зміна розміру тексту -->
+        <div id="styles">
+            <p>Font Size:</p>
+            <div id=radioDiv>
+                <input name="size" type="radio" id="size12" value="12px" class="radioButton">12px
+                <input name="size" type="radio" id="size14" value="14px" class="radioButton">14px
+                <input name="size" type="radio" id="size16" value="16px" class="radioButton">16px
+                <input name="size" type="radio" id="size18" value="18px" class="radioButton">18px
+                <input name="size" type="radio" id="size20" value="20px" class="radioButton">20px
+            </div>
+            <!-- Зміна шрифту -->
+            <p>Font Family:</p>
+            <select id="select" onchange="getSelectValue();">
+                <option value="">Choose option</option>
+                <option value="cursive">cursive</option>
+                <option value="fantasy">fantasy</option>
+                <option value="monospase">monospase</option>
+            </select>
+            <!-- Палітра 1 -->
+            <p>Colors:</p>
+            <button id="color" class="btns">Color of text</button>
+            <button id="background" class="btns">Background color</button>
+            <div id="colorBlockForFont">
+                <div class="blockFF">red</div>
+                <div class="blockFF">blue</div>
+                <div class="blockFF">green</div>
+                <div class="blockFF">black</div>
+                <div class="blockFF">orange</div>
+                <div class="blockFF">pink</div>
+                <div class="blockFF">white</div>
+                <div class="blockFF">purple</div>
+                <div class="blockFF">lightgreen</div>
+            </div>
+            <!-- Палітра 2 -->
+            <div id="colorBlockForBgr">
+                <div class="blockBg">red</div>
+                <div class="blockBg">blue</div>
+                <div class="blockBg">green</div>
+                <div class="blockBg">black</div>
+                <div class="blockBg">orange</div>
+                <div class="blockBg">pink</div>
+                <div class="blockBg">white</div>
+                <div class="blockBg">purple</div>
+                <div class="blockBg">lightgreen</div>
+            </div>
+            <!-- Стиль тексту -->
+            <p>Style:</p>
+            <input type="checkbox" id="bold" name="checkbox1" value="bold" class="checkbox">
+            <label for="bold"> Bold text</label>
+            <input type="checkbox" id="cursive" name="checkbox2" value="italic" class="checkbox">
+            <label for="cursive"> Cursive text</label>
+        </div>
+    </div>
+    </div>
+
+    <script src="./script_Test1.js"></script>
+</body>
+
+</html>
