@@ -9,17 +9,17 @@
 /* Шрифти */
 @font-face {
     font-family: cursive;
-    src: url('./CedarvilleCursive-Regular.ttf');
+    src: url('./fonts/CedarvilleCursive-Regular.ttf');
 }
 
 @font-face {
     font-family: fantasy;
-    src: url('./AlumniSansPinstripe-Regular.ttf');
+    src: url('./fonts/AlumniSansPinstripe-Regular.ttf');
 }
 
 @font-face {
     font-family: monospase;
-    src: url('./RobotoMono-VariableFont_wght.ttf');
+    src: url('./fonts/RobotoMono-VariableFont_wght.ttf');
 }
 /* Стилі загального DIVa */
 #container {
