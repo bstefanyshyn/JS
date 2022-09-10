@@ -1,12 +1,8 @@
 const date = new Date();
-const fullDate = document.querySelector('.fullDate');
-const time = document.querySelector('.time');
-const showResultLoop = document.querySelector('.showResultLoop');
-const plus = document.querySelector('.plus');
-const minus = document.querySelector('.minus');
-const value = document.querySelector('.value');
+const showResultLoopWindow = document.querySelector('.showResultLoopWindow');
 
 const showDate = () => {
+    const fullDate = document.querySelector('.fullDate');
     var day = date.getDate();
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
@@ -20,6 +16,7 @@ const showDate = () => {
 showDate();
 
 const clockInterval = setInterval(() => {
+    const time = document.querySelector('.time');
     const date = new Date();
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -47,7 +44,9 @@ document.querySelector('.startSec').addEventListener('click', () => {
 
 document.querySelector('.loopSec').addEventListener('click', () => {
     clearInterval(int);
-    showResultLoop.textContent += timeRef.innerHTML;
+    if (timeRef.innerText != '00:00:00') {
+        showResultLoopWindow.textContent += timeRef.textContent;
+    }
 });
 
 document.querySelector('.stopSec').addEventListener('click', () => {
@@ -57,7 +56,8 @@ document.querySelector('.stopSec').addEventListener('click', () => {
 document.querySelector('.resetSec').addEventListener('click', () => {
     clearInterval(int);
     [swMilliseconds, swSecond, swMinute, swHours] = [0, 0, 0];
-    timeRef.innerHTML = '00 : 00 : 00';
+    timeRef.innerHTML = '00:00:00';
+    showResultLoopWindow.textContent = '';
 });
 
 function mainTime() {
@@ -65,7 +65,7 @@ function mainTime() {
     if (swMilliseconds == 1000) {
         swMilliseconds = 0;
         swSecond++;
-        
+
         if (swSecond == 60) {
             swSecond = 0;
             swMinute++;
@@ -74,97 +74,31 @@ function mainTime() {
             }
         }
     }
-
     let m = swMinute < 10 ? "0" + swMinute : swMinute;
     let s = swSecond < 10 ? "0" + swSecond : swSecond;
     let ms = swMilliseconds < 10 ? "00" + swMilliseconds : swMilliseconds < 100 ? "0" + swMilliseconds : swMilliseconds;
 
-    timeRef.innerHTML = ` ${m} : ${s} : ${ms}`;
-
+    timeRef.innerHTML = ` ${m}:${s}:${ms}`;
 }
 
-// plus.addEventListener('click', () => {
-//     clearInterval(int);
-//     if (value.textContent < 60) {
-//         value.textContent++;
-//     }
-
-// });
-
-// minus.addEventListener('click', () => {
-//     clearInterval(int);
-//     if (value.textContent > 1) {
-//         value.textContent--;
-//     }
-// });
-
-
-
-
-
-
-
-
-
-// const startTimer = document.querySelector('.startTimer');
-// const stopTimer = document.querySelector('.stopTimer');
-// const resetTimer = document.querySelector('.resetTimer');
-// const timerSetter = document.querySelector('.timer-setter');
-// const timerAction = document.querySelector('.timerAction');
-
-// let tmMinutes = 0;
-// let tmSeconds = 0;
-
-// function setTimer() {
-//     if (tmMinutes >= 0) {
-//         timerAction.innerHTML = `${tmMinutes}:${tmSeconds}`;
-//     } else {
-//         timerAction.innerHTML = '00:00';
-//     }
-// }
-// setTimer();
-
-// startTimer.addEventListener('click', () => {
-//     timerAction.innerHTML = value.textContent + ": 00";
-//     tmMinutes = parseInt(startTimer.value);
-//     if (startTimer < 1) {
-//         tmSeconds = startTimer.value.split('.')[1];
-//     }
-
-
-
-//     const interval = setInterval(() => {
-//         if (tmSeconds > 0) {
-//             tmSeconds--;
-//         } else {
-//             seconds = 59;
-//             tmMinutes--;
-//         }
-
-//         setTimer();
-
-//         if (tmMinutes < 0) {
-//             setTimer()
-//             clearInterval(interval);
-//         }
-//     }, 1000)
-// })
-
-const actionBtn = document.querySelector('.startTimer');
-const timerSetter = document.querySelector('.timer-setter');
+const startTimer = document.querySelector('.startTimer');
+const timerSetter = document.querySelector('.timerSetter');
 const timerAction = document.querySelector('.timerAction');
 
-let minutes = 0;
-let seconds = 0;
+var minutesTimer = 00;
+var secondsTimer = 00;
+// if (minutesTimer < 10) { minutesTimer = "0" + minutesTimer; }
+// if (secondsTimer < 10) { secondsTimer = "0" + secondsTimer; }
 
+const plus = document.querySelector('.plus');
 plus.addEventListener('click', () => {
     clearInterval(int);
     if (timerSetter.value < 60) {
         timerSetter.value++;
     }
-
 });
 
+const minus = document.querySelector('.minus');
 minus.addEventListener('click', () => {
     clearInterval(int);
     if (timerSetter.value > 1) {
@@ -173,42 +107,49 @@ minus.addEventListener('click', () => {
 });
 
 function setTimer() {
-    if (minutes >= 0) {
-        timerAction.innerHTML = `${minutes}:${seconds}`;
-    } else {
-        timerAction.innerHTML = '0:0';
+    if (minutesTimer > 0) {
+        timerAction.innerHTML = `${minutesTimer}:${secondsTimer}`;
+    }
+    else {
+        timerAction.innerHTML = '00:00';
     }
 }
 
-actionBtn.addEventListener('click', () => {
+startTimer.addEventListener('click', () => {
+    minutesTimer = parseInt(timerSetter.value);
 
-    minutes = parseInt(timerSetter.value);
-
-    if (minutes < 1) {
-        seconds = timerSetter.value.split('.')[1];
+    if (minutesTimer < 1) {
+        secondsTimer = timerSetter.value.split('.')[1];
     }
 
     setTimer();
 
     const interval = setInterval(() => {
-        if (seconds > 0) {
-            seconds--;
-        } else {
-            seconds = 59;
-            minutes--;
+        if (secondsTimer > 0) {
+            secondsTimer--;
+        }
+
+        else {
+            secondsTimer = 59;
+            minutesTimer--;
         }
 
         setTimer();
 
-        if (minutes < 0) {
+        if (minutesTimer < 0) {
             setTimer()
             clearInterval(interval);
         }
+
     }, 1000)
+    const stopTimer = document.querySelector('.stopTimer');
+    stopTimer.addEventListener('click', () => {
+        clearInterval(interval);
+    });
+
+    const resetTimer = document.querySelector('.resetTimer');
+    resetTimer.addEventListener('click', () => {
+        clearInterval(interval);
+        timerAction.innerHTML = '00:00'
+    });
 })
-
-// const stopTimer = document.querySelector('.stopTimer');
-
-// stopTimer.addEventListener('click', () => {
-//     clearInterval(interval);
-// });
