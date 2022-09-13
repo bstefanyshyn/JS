@@ -43,10 +43,25 @@ console.log(newArray);
 
 
 //  6. reduce
-// let arrReduce = [1, 2, 5, 0, 4, 5, 6];
-// var newArrRed = arrReduce.reduce((previousValue, currentValue) => previousValue + currentValue)
+let arrReduce = [1, 2, 5, 0, 4, 5, 6];
 
-// console.log(newArrRed);
+var newArrRed1 = arrReduce.reduce((previousValue, currentValue) => {
+    if (currentValue == 0) {
+        return console.log(previousValue);
+    } else {
+        return previousValue + currentValue;
+    }
+}, 0);
+
+var i = 0;
+const newArrRed2 = arrReduce.reduce((previousValue, currentValue) => {
+    if (previousValue > 10) {
+        console.log(i);
+    } else {
+        i++;
+        return previousValue + currentValue;
+    }
+}, 0);
 
 
 
@@ -56,14 +71,3 @@ var positiveArray = array.filter(elem => elem >= 0);
 console.log(positiveArray);
 var sqrtArray = positiveArray.map(e => e = Math.sqrt(e));
 console.log(sqrtArray);
-
-
-
-// const euro = [1, -2, 3, 0, 4, -5, 6, -11];
-// const above30 = euro.reduce((total, amount) => {
-//   if (euro.length < 4) {
-//     total+=amount;
-//   }
-//   return total;
-// }, []);
-// console.log(above30);
