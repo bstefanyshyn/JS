@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Registration form</title>
+</head>
+
+<body>
+    <!--page container-->
+    <div class="container">
+        <!-- container for form -->
+        <div class="loginArea">
+            <!-- registration form window -->
+            <p>Please sign up</p>
+            <form class="form" action="" novalidate">
+                <div class="formItem">
+                    <input type="text" class="inputItem firstName" name="firstName" placeholder="First name">
+                </div>
+                <div class="formItem">
+                    <input type="text" class="inputItem lastName" name="lastName" placeholder="Last name">
+                </div>
+                <div class="formItem">
+                    <input type="email" class="inputItem email" name="email" placeholder="Email address">
+                </div>
+                <div class="formItem">
+                    <input type="password" class="inputItem password" name="password" placeholder="Password">
+                </div>
+                <div class="formItem">
+                    <input type="checkbox" class="inputItemCheckbox" id="checkbox">
+                    <label class="checkboxLabel" for="checkbox">I agree with Privacy Policy</label>
+                </div>
+                <button type="submit" class="actionBtn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <!-- modal window after successfully registration-->
+    <div id="accountModal" class="modal">
+        <div class="modalTop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24" fill="#00d1a4"
+                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-check-circle">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+        </div>
+        <div class="modalBottom">
+            <p class="modalHeader">Great!</p>
+            <p class="modalParagraph">Your account has been created successfully.</p>
+            <button id="startExploring">Start Exploring
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-arrow-right">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

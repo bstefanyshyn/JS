@@ -1,0 +1,167 @@
+/* global styles*/
+
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    font-family: roboto;
+    background-color: #f0efef;
+}
+
+/* page size */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.loginArea {
+    width: 30%;
+    height: 7vh;
+    margin: 0 auto;
+}
+
+.container p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    padding-top: 15%;
+    margin-bottom: 5%;
+}
+
+/* input styles */
+
+.inputItem {
+    position: relative;
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 7%;
+    padding-left: 20px;
+    background-color: azure;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-weight: bold;
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+input::placeholder {
+    font-weight: bold;
+}
+
+.inputItemCheckbox {
+    margin-bottom: 7%;
+}
+
+/* submit button */
+
+.actionBtn {
+    cursor: pointer;
+    background-color: #719ECE;
+    color: azure;
+    width: 100%;
+    height: 7vh;
+    margin-bottom: 7%;
+    padding-left: 20px;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-weight: bold;
+}
+
+/* classes for validate result */
+
+.error {
+    border-color: red;
+}
+
+.ok {
+    border-color: #00d11c;
+}
+
+/* modal window styles */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 32.5%;
+    top: 15%;
+    width: 35%;
+    height: 55%;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.modalTop {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    background-color: #00d1a4;
+    background-position: center;
+}
+
+.modalTop svg {
+    position: absolute;
+    top: 15%;
+    left: 40%;
+}
+
+.feather-check-circle {
+    background-color: #00d1a4;
+}
+
+.modalBottom {
+    width: 100%;
+    height: 60%;
+    background-color: white;
+    padding-top: 5%;
+}
+
+.modalHeader {
+    text-align: center;
+    font-size: 40px;
+    background-color: white;
+}
+
+.modalParagraph {
+    padding-top: 2%;
+    background-color: white;
+    text-align: center;
+}
+
+#startExploring {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-top: 4%;
+    width: 35%;
+    height: 20%;
+    text-align: start;
+    padding-left: 5px;
+    background-color: orange;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.feather-arrow-right {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    background-color: orange;
+    display: block;
+    float: right;
+}
