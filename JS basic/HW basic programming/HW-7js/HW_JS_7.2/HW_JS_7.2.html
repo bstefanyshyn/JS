@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style_7.2.css">
+    <title>To Do list</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="tasks">
+            <h3 class="tasksList">Список завдань</h3>
+        </div>
+        <div id="newtask">
+            <h3 class="addNewTaskLabel">Додати нове завдання</h3>
+            <input type="text" placeholder="Add Tasks">
+            <button id="push">Add</button>
+        </div>
+    </div>
+    <div id="myModalForEmpty" class="modal">
+            <span class="closeModalForEmpty">&times;</span>
+            <p class="attention">Попередження!</p>
+            <p class="attentionMessage">Пусте поле не можна добавити.</p>
+    </div>
+    <div id="myModalForLastLI" class="modal">
+        <span class="closeModalForLastLI">&times;</span>
+        <p class="attention">Попередження!</p>
+        <p class="attentionMessage">Останній таск зі списку Ви не можете видалити.</p>
+</div>
+    <script src="./script_7.2.js"></script>
+</body>
+
+</html>
