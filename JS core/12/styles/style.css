@@ -1,0 +1,109 @@
+/* global styles */
+
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/RobotoMono-VariableFont_wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    font-family: roboto;
+    background-color: white;
+}
+
+/* page size */
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    padding: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.loginArea {
+    width: 30%;
+    height: 7vh;
+    /* margin-left: 5%; */
+    /* margin: 0 auto; */
+}
+
+/* input styles */
+
+.inputItem {
+    position: relative;
+    width: 100%;
+    height: 7vh;
+    margin-top: 3%;
+    margin-bottom: 7%;
+    padding-left: 20px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    /* font-weight: bold; */
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+/* input::placeholder {
+    font-weight: bold;
+} */
+
+.inputItemCheckbox {
+    margin-bottom: 7%;
+}
+
+/* submit button */
+
+.actionBtn {
+    cursor: pointer;
+    background-color: white;
+    color: green;
+    width: 25%;
+    height: 7vh;
+    margin-bottom: 7%;
+    /* padding-left: 20px; */
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    /* font-weight: bold; */
+}
+
+/* classes for validate result */
+
+.error {
+    border-color: red;
+}
+
+.ok {
+    border-color: #00d11c;
+}
+
+.tablePlace{
+    width: 60%;
+    padding-top: 2%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+tr {
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
+    height: 30px;
+}
+th {
+    height: 50px;
+    align-items: center;
+}
+td {
+    padding: 10px 0;
+
+}
