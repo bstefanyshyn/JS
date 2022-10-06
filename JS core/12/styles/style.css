@@ -75,6 +75,11 @@ input:focus {
     /* font-weight: bold; */
 }
 
+.actionBtn:hover{
+    background-color: green;
+    color: white;
+}
+
 /* classes for validate result */
 
 .error {
