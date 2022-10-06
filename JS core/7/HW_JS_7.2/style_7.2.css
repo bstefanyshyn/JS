@@ -1,0 +1,138 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-image: url(./images/ToDoListBackground.jpg);
+    background-size: auto;
+    background-position: center;
+}
+
+.container {
+    width: 45%;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    min-width: 450px;
+    position: relative;
+    min-height: 500px;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+#tasks {
+    border-radius: 10px;
+    width: 50%;
+    position: relative;
+    padding: 50px 20px;
+    margin-top: 10px;
+}
+
+.task {
+    border-radius: 5px;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    height: 40px;
+    margin-bottom: 8px;
+    padding: 5px 10px;
+    display: flex;
+}
+
+.tasksList{
+    text-align: center;
+    color: brown;
+}
+
+#newtask {
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    padding: 30px 20px;
+}
+
+.addNewTaskLabel{
+    text-align: center;
+    color: brown;
+}
+
+#newtask input {
+    width: 75%;
+    height: 35px;
+    color: #111111;
+    font-weight: 500;
+    border:none;
+    border-radius: 5px;
+    font-size: 15px;
+    border-bottom: 2px solid brown;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    margin-left: 30px;
+}
+
+#newtask input:focus {
+    outline: none;
+    border-color: #0d75ec;
+}
+
+#newtask button {
+    position: absolute;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: brown;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    width: 30%;
+    height: 25px;
+    border-radius: 5px;
+    top: 75%;
+    left: 35%
+}
+
+.task span {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 30%;
+    top: 35%;
+    width: 40%;
+    height: 15%;
+    overflow: auto;
+    padding: 10px;
+    background-color: rgb(253, 179, 179);
+    border-radius: 10px;
+}
+.modal:hover{
+    cursor: pointer;
+}
+
+.attention{
+    color: brown;
+    font-size: 20px;
+}
+.attentionMessage{
+    color: brown;
+}
+
+.closeModalForEmpty, .closeModalForLastLI{
+    color: brown;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
