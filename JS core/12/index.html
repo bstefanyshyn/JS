@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Registration form</title>
+</head>
+
+<body>
+    <!--page container-->
+    <div class="container">
+        <!-- container for form -->
+        <div class="loginArea">
+            <!-- registration form window -->
+            <form class="form" action="" novalidate">
+                <div class="formItem">
+                    <label for="login">Login</label>
+                    <input type="text" class="inputItem login" name="login" placeholder="Enter login">
+                </div>
+                <div class="formItem">
+                    <label for="password">Password</label>
+                    <input type="password" class="inputItem password" name="password" placeholder="Enter password">
+                </div>
+                <div class="formItem">
+                    <label for="Email">Email</label>
+                    <input type="email" class="inputItem email" name="email" placeholder="Enter email">
+                </div>
+                <button type="submit" class="actionBtn">Add user</button>
+            </form>
+            <button class="edit">Edit</button>
+        </div>
+        <div class="tablePlace">
+            <table class="table">
+                <tr class="tableHead">
+                    <th>#</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </table>
+        </div>
+        <script src="./script.js"></script>
+</body>
+
+</html>
